@@ -37,19 +37,6 @@ app.get('/v3/es-ar/:name', function(req, res) {
 res.json({msg: "Hola, querido "+ req.params.name});
 })
 
-//Another option
-// app.get('/v3/:lang/:name', function(req, res) {
-//   if (req.params.lang === 'pt-br') {
-//     res.json({msg: "Olá, querido "+ req.params.name});
-//   } else if (req.params.lang === 'en-us') {
-//     res.json({msg: "Hello, dear "+ req.params.name});
-//   } else if (req.params.lang === 'es-ar') {
-//     res.json({msg: "Hola, querido "+ req.params.name});
-//   } else {
-//     res.status(404).json({msg: 'Endpoint not found'});
-//   }
-// });
-
 //CATCH ERROR 404
 app.use((req, res, next) => {
   res.status(404).json({msg: 'Endpoint not found.'});
